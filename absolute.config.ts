@@ -1,13 +1,28 @@
 import { defineConfig } from '@absolutejs/absolute';
 
 export default defineConfig({
+	angularDirectory: 'src/frontend/angular',
 	assetsDirectory: 'src/backend/assets',
 	buildDirectory: 'build',
-	reactDirectory: 'src/frontend/react',
 	htmlDirectory: 'src/frontend/html',
-	svelteDirectory: 'src/frontend/svelte',
-	vueDirectory: 'src/frontend/vue',
 	htmxDirectory: 'src/frontend/htmx',
-	angularDirectory: 'src/frontend/angular',
-	publicDirectory: 'public'
+	islands: { registry: 'src/frontend/islands.ts' },
+	publicDirectory: 'public',
+	reactDirectory: 'src/frontend/react',
+	static: {
+		revalidate: 3600,
+		routes: [
+			'/',
+			'/architecture',
+			'/industries/logistics',
+			'/industries/healthcare',
+			'/industries/retail',
+			'/industries/field-services',
+			'/industries/public-transit',
+			'/industries/sports-performance'
+		]
+	},
+	stylesConfig: 'src/frontend/styles/indexes',
+	svelteDirectory: 'src/frontend/svelte',
+	vueDirectory: 'src/frontend/vue'
 });

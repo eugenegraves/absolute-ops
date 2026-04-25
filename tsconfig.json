@@ -5,7 +5,9 @@
 		"strictTemplates": true
 	},
 	"compilerOptions": {
+		"emitDecoratorMetadata": true,
 		"esModuleInterop": true,
+		"experimentalDecorators": true,
 		"forceConsistentCasingInFileNames": true,
 		"incremental": true,
 		"jsx": "react-jsx",
@@ -16,8 +18,16 @@
 		"strict": true,
 		"target": "ESNext",
 		"tsBuildInfoFile": ".absolutejs/tsconfig.tsbuildinfo",
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
 		"useDefineForClassFields": false
-	}
+	},
+	"exclude": [
+		"build",
+		"node_modules",
+		".absolutejs",
+		"src/frontend/**/generated/**"
+	],
+	"include": [
+		"src/**/*",
+		"absolute.config.ts"
+	]
 }

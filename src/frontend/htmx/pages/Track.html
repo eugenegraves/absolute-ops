@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AbsoluteOps · Track an Operation</title>
+<meta name="description" content="Customer-facing operation tracker — HTMX fragments swap into the page on every interaction." />
+<link rel="icon" href="/assets/ico/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="../../styles/indexes/track.css" />
+<script src="/htmx/htmx.min.js"></script>
+</head>
+<body>
+<div class="ao-shell ao-track">
+<nav class="ao-topnav">
+<a class="ao-brand" href="/"><span class="ao-brand-mark"></span><span>AbsoluteOps</span></a>
+<div class="ao-nav"><a href="/">Home</a><a href="/architecture">Architecture</a><a href="/workspace">Workspace</a><a href="/dashboard">Dashboard</a><a href="/ai-briefing">AI Briefing</a></div>
+<a class="ao-cta" href="/workspace">Open Command Center</a>
+</nav>
+
+<header class="ao-track__head">
+<span class="ao-pill">HTMX · scoped state</span>
+<h1>Track an operation</h1>
+<p style="color:var(--fg-muted)">Look up a request by its ID. The detail panel updates with HTMX fragment swaps — no client-side router, no React vendor chunk. Try one of these:</p>
+<div class="ao-track__chips">
+<button type="button" class="ao-track__chip" hx-get="/track/api/detail?id=OP-2048" hx-target="#track-detail" hx-swap="innerHTML">OP-2048</button>
+<button type="button" class="ao-track__chip" hx-get="/track/api/detail?id=MED-3911" hx-target="#track-detail" hx-swap="innerHTML">MED-3911</button>
+<button type="button" class="ao-track__chip" hx-get="/track/api/detail?id=FIELD-8820" hx-target="#track-detail" hx-swap="innerHTML">FIELD-8820</button>
+<button type="button" class="ao-track__chip" hx-get="/track/api/detail?id=TRANSIT-77" hx-target="#track-detail" hx-swap="innerHTML">TRANSIT-77</button>
+</div>
+</header>
+
+<div class="ao-track__layout">
+	<aside class="ao-track__panel">
+		<form class="ao-track__search" hx-get="/track/api/detail" hx-target="#track-detail" hx-swap="innerHTML">
+			<input class="ao-track__input" name="id" placeholder="OP-2048" autocomplete="off" />
+			<button type="submit" class="ao-cta">Find</button>
+		</form>
+		<div class="ao-track__list" id="track-list" hx-get="/track/api/list" hx-trigger="load" hx-swap="innerHTML">
+			<div style="color:var(--fg-soft);font-size:13px;padding:8px">Loading operations…</div>
+		</div>
+	</aside>
+
+	<section class="ao-track__panel">
+		<div id="track-detail">
+			<div class="ao-detail__empty">
+				<p><strong>Pick an operation.</strong></p>
+				<p>Detail loads via an HTMX fragment swap — no full page reload.</p>
+			</div>
+		</div>
+	</section>
+</div>
+</div>
+<!--ABSOLUTEOPS_INSPECTOR-->
+</body>
+</html>

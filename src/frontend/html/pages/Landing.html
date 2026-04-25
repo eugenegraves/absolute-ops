@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AbsoluteOps — One app. Every interface your business needs.</title>
+<meta name="description" content="A real-time, multi-industry operations command center built on AbsoluteJS. One Bun/Elysia server picks the right UI per route — fast HTML, HTMX, React, Svelte, Vue, Angular, and AI." />
+<link rel="icon" href="/assets/ico/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="../../styles/indexes/marketing.css" />
+</head>
+<body>
+<div class="ao-shell">
+	<nav class="ao-topnav">
+		<a class="ao-brand" href="/">
+			<span class="ao-brand-mark"></span>
+			<span>AbsoluteOps</span>
+		</a>
+		<div class="ao-nav">
+			<a href="/architecture">Architecture</a>
+			<a href="/industries/logistics">Industries</a>
+			<a href="/track">Track</a>
+			<a href="/workspace">Workspace</a>
+			<a href="/dashboard">Dashboard</a>
+			<a href="/ai-briefing">AI Briefing</a>
+		</div>
+		<a class="ao-cta" href="/workspace">Open Command Center</a>
+	</nav>
+
+	<header class="ao-mkt-hero">
+		<span class="ao-mkt-hero__eyebrow">
+			<span class="ao-pill">Built on AbsoluteJS · Bun · Elysia</span>
+		</span>
+		<h1>One app. Every interface your business needs.</h1>
+		<p class="ao-mkt-hero__sub">
+			AbsoluteOps is a live operations command center for orders, field workers, dispatch, support tickets, inventory, and executive reporting — built on AbsoluteJS so each route picks its own UI model. Static HTML for marketing, HTMX for customer flows, React for the operator workspace, Svelte for the exec dashboard, Angular for enterprise admin, and Vue with the AbsoluteJS AI plugin for daily briefings — all from the same Bun/Elysia server.
+		</p>
+		<div class="ao-mkt-hero__cta">
+			<a class="ao-cta" href="/workspace">View Command Center</a>
+			<a class="ao-cta ao-cta--ghost" href="/track">Track an Operation</a>
+		</div>
+	</header>
+
+	<section class="ao-proof">
+		<div class="ao-proof__cell"><div class="ao-proof__title">SSR-first</div><div class="ao-proof__detail">Server-rendered HTML on every route</div></div>
+		<div class="ao-proof__cell"><div class="ao-proof__title">One server</div><div class="ao-proof__detail">Bun + Elysia for every UI model</div></div>
+		<div class="ao-proof__cell"><div class="ao-proof__title">Per-route framework</div><div class="ao-proof__detail">React, Svelte, Vue, Angular, HTMX</div></div>
+		<div class="ao-proof__cell"><div class="ao-proof__title">Minimal JS</div><div class="ao-proof__detail">Static + islands where possible</div></div>
+		<div class="ao-proof__cell"><div class="ao-proof__title">AI-ready</div><div class="ao-proof__detail">Streamed briefings via aiChat plugin</div></div>
+	</section>
+
+	<section class="ao-section">
+		<div class="ao-section__head">
+			<h2>Industries</h2>
+			<p class="ao-section__sub">One platform shape adapts to every operations team. Each card opens a static-rendered industry page — under 12 KB, zero framework JS.</p>
+		</div>
+		<div class="ao-grid ao-grid--3">
+			<a class="ao-industry-card" href="/industries/logistics"><span class="ao-pill">Logistics</span><div class="ao-industry-card__label">Cold-chain &amp; cross-dock</div><p class="ao-industry-card__tagline">Reefer reroutes, last-mile, exception capture.</p></a>
+			<a class="ao-industry-card" href="/industries/healthcare"><span class="ao-pill ao-pill--info">Healthcare</span><div class="ao-industry-card__label">Triage &amp; intake</div><p class="ao-industry-card__tagline">Walk-in flow, provider routing, audit trail.</p></a>
+			<a class="ao-industry-card" href="/industries/retail"><span class="ao-pill ao-pill--ok">Retail</span><div class="ao-industry-card__label">Inventory &amp; sweep</div><p class="ao-industry-card__tagline">Oversell recovery, merchandising rotations.</p></a>
+			<a class="ao-industry-card" href="/industries/field-services"><span class="ao-pill ao-pill--warn">Field Services</span><div class="ao-industry-card__label">Tech routing</div><p class="ao-industry-card__tagline">Two-visit jobs, parts confirmation, signature.</p></a>
+			<a class="ao-industry-card" href="/industries/public-transit"><span class="ao-pill">Public Transit</span><div class="ao-industry-card__label">Network ops</div><p class="ao-industry-card__tagline">Disruption response, rider transparency.</p></a>
+			<a class="ao-industry-card" href="/industries/sports-performance"><span class="ao-pill ao-pill--info">Sports Performance</span><div class="ao-industry-card__label">Recovery protocols</div><p class="ao-industry-card__tagline">Telemetry-aware coaching workflows.</p></a>
+		</div>
+	</section>
+
+	<section class="ao-section">
+		<div class="ao-section__head">
+			<h2>Architecture preview</h2>
+			<p class="ao-section__sub">One AbsoluteJS app picks the right UI model per route. The Framework Inspector pill in the bottom-right shows what each page is doing.</p>
+		</div>
+		<div class="ao-arch-list">
+			<a class="ao-arch-row" href="/"><div class="ao-arch-row__route">/</div><div class="ao-arch-row__detail">This page — fast public landing</div><div class="ao-arch-row__model">Static HTML · SSG</div></a>
+			<a class="ao-arch-row" href="/track"><div class="ao-arch-row__route">/track/:id</div><div class="ao-arch-row__detail">HTMX customer tracking with timeline + simulated updates</div><div class="ao-arch-row__model">HTMX · server-rendered</div></a>
+			<a class="ao-arch-row" href="/workspace"><div class="ao-arch-row__route">/workspace</div><div class="ao-arch-row__detail">React operator workspace with kanban + activity feed</div><div class="ao-arch-row__model">React · SSR + hydrate</div></a>
+			<a class="ao-arch-row" href="/dashboard"><div class="ao-arch-row__route">/dashboard</div><div class="ao-arch-row__detail">Svelte executive dashboard with KPIs and trends</div><div class="ao-arch-row__model">Svelte · SSR + hydrate</div></a>
+			<a class="ao-arch-row" href="/admin"><div class="ao-arch-row__route">/admin</div><div class="ao-arch-row__detail">Angular enterprise admin: roles, integrations, compliance</div><div class="ao-arch-row__model">Angular · SSR + hydrate</div></a>
+			<a class="ao-arch-row" href="/field"><div class="ao-arch-row__route">/field</div><div class="ao-arch-row__detail">Mobile field worker app — HTMX shell + Svelte islands</div><div class="ao-arch-row__model">HTMX + Islands</div></a>
+			<a class="ao-arch-row" href="/ai-briefing"><div class="ao-arch-row__route">/ai-briefing</div><div class="ao-arch-row__detail">Vue AI ops briefing wired through the AbsoluteJS aiChat plugin</div><div class="ao-arch-row__model">Vue · WebSocket stream</div></a>
+		</div>
+	</section>
+
+	<section class="ao-mkt-final">
+		<h2>One codebase. Every surface.</h2>
+		<p>From a static landing to a live operator workspace to an AI briefing — every route in this demo runs on the same Bun/Elysia/AbsoluteJS server. Pick whichever UI model fits the surface; ship one binary.</p>
+		<div class="ao-mkt-hero__cta" style="justify-content:center;margin-top:24px">
+			<a class="ao-cta" href="/architecture">See the architecture</a>
+			<a class="ao-cta ao-cta--ghost" href="https://absolutejs.com/documentation" rel="external">AbsoluteJS docs</a>
+		</div>
+	</section>
+
+	<footer class="ao-mkt-foot">
+		<span>AbsoluteOps · Demo data only · 2026</span>
+		<span>Powered by AbsoluteJS · Bun · Elysia</span>
+	</footer>
+</div>
+<!--ABSOLUTEOPS_INSPECTOR-->
+</body>
+</html>

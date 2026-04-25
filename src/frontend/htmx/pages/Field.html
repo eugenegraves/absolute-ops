@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>AbsoluteOps · Field</title>
+<meta name="description" content="Mobile field worker app — HTMX shell with Svelte islands for signature, photo capture, and a job timer." />
+<meta name="theme-color" content="#07090d" />
+<link rel="icon" href="/assets/ico/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="../../styles/indexes/field.css" />
+<script src="/htmx/htmx.min.js"></script>
+</head>
+<body>
+<div class="ao-field">
+<header class="ao-field__bar">
+<a class="ao-field__brand" href="/"><span class="ao-brand-mark"></span><span>AbsoluteOps · Field</span></a>
+<span class="ao-field__network">● Cellular · 2 bars</span>
+</header>
+
+<section class="ao-field__assignment">
+<span class="ao-pill ao-pill--warn">Active assignment</span>
+<div class="ao-field__id">FIELD-8820</div>
+<div class="ao-field__customer">Stratus Property Group</div>
+<div class="ao-field__location">Charlotte, NC · Climate East team</div>
+<div class="ao-field__eta">
+<div class="ao-field__eta-item"><span class="ao-field__eta-label">ETA</span><span class="ao-field__eta-value">24 min</span></div>
+<div class="ao-field__eta-item"><span class="ao-field__eta-label">Distance</span><span class="ao-field__eta-value">9.2 mi</span></div>
+<div class="ao-field__eta-item"><span class="ao-field__eta-label">Route</span><span class="ao-field__eta-value">I-485 W</span></div>
+</div>
+</section>
+
+<section class="ao-field__card">
+<span class="ao-field__card-title">Job timer</span>
+<div data-island="true" data-framework="svelte" data-component="FieldTimer" data-hydrate="load" data-props="{}"></div>
+</section>
+
+<section class="ao-field__card">
+<span class="ao-field__card-title">Checklist</span>
+<div id="field-checklist" hx-get="/field/api/checklist" hx-trigger="load" hx-swap="innerHTML">
+<div style="color:var(--fg-soft);font-size:13px">Loading…</div>
+</div>
+</section>
+
+<section class="ao-field__card">
+<span class="ao-field__card-title">Capture photo</span>
+<div data-island="true" data-framework="svelte" data-component="PhotoCaptureStub" data-hydrate="visible" data-props="{}"></div>
+</section>
+
+<section class="ao-field__card">
+<span class="ao-field__card-title">Customer signature</span>
+<div data-island="true" data-framework="svelte" data-component="SignaturePad" data-hydrate="visible" data-props="{}"></div>
+</section>
+
+<button type="button" class="ao-field__action" hx-post="/field/api/complete" hx-target="#field-status" hx-swap="innerHTML">
+Mark visit complete
+</button>
+<div id="field-status"></div>
+
+<div class="ao-field__offline">
+Works offline · queued actions sync when connected
+</div>
+</div>
+<!--ABSOLUTEOPS_INSPECTOR-->
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AbsoluteOps · Architecture</title>
+<meta name="description" content="The AbsoluteOps architecture: one Bun/Elysia/AbsoluteJS server with per-route UI models — static HTML, HTMX, React, Svelte, Vue, Angular, and AI." />
+<link rel="icon" href="/assets/ico/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="../../styles/indexes/marketing.css" />
+</head>
+<body>
+<div class="ao-shell">
+	<nav class="ao-topnav">
+		<a class="ao-brand" href="/"><span class="ao-brand-mark"></span><span>AbsoluteOps</span></a>
+		<div class="ao-nav"><a href="/">Home</a><a href="/industries/logistics">Industries</a><a href="/track">Track</a><a href="/workspace">Workspace</a><a href="/dashboard">Dashboard</a><a href="/ai-briefing">AI Briefing</a></div>
+		<a class="ao-cta" href="/workspace">Open Command Center</a>
+	</nav>
+
+	<header class="ao-mkt-hero">
+		<span class="ao-mkt-hero__eyebrow"><span class="ao-pill">Architecture</span></span>
+		<h1>One server. The right UI per route.</h1>
+		<p class="ao-mkt-hero__sub">AbsoluteOps runs on a single Bun process with Elysia routing. Each route picks the rendering strategy that matches its job — static for content, HTMX for thin server-driven flows, React/Svelte/Vue/Angular for app-like surfaces, and the AbsoluteJS aiChat plugin for streamed AI. The Framework Inspector overlay on each page makes the choice visible.</p>
+	</header>
+
+	<section class="ao-section">
+		<div class="ao-section__head"><h2>Stack at a glance</h2><p class="ao-section__sub">No microservices, no glue. AbsoluteJS resolves the manifest at boot, mounts each handler, and serves both pre-rendered HTML and SSR responses from the same Elysia app.</p></div>
+		<div class="ao-arch-diagram">
+			<div class="ao-arch-diagram__col">
+				<h3>Server</h3>
+				<ul style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+					<li><strong>Bun</strong> — runtime + bundler + test runner</li>
+					<li><strong>Elysia</strong> — typed HTTP routing</li>
+					<li><strong>AbsoluteJS</strong> — pages, islands, AI, pre-render, ISR</li>
+					<li><strong>elysia-scoped-state</strong> — per-session UI state</li>
+				</ul>
+			</div>
+			<div class="ao-arch-diagram__col">
+				<h3>Client</h3>
+				<ul style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+					<li><strong>HTMX</strong> for server-driven flows</li>
+					<li><strong>React 19</strong> for the operator workspace</li>
+					<li><strong>Svelte 5</strong> for the executive dashboard</li>
+					<li><strong>Vue 3</strong> for the AI briefing</li>
+					<li><strong>Angular 21 SSR</strong> for the enterprise admin</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="ao-section">
+		<div class="ao-section__head"><h2>Routes &amp; render strategies</h2><p class="ao-section__sub">Static generation, server-rendered HTMX fragments, SSR + hydration, and WebSocket streams — all picked per route, not per app.</p></div>
+		<div class="ao-arch-list">
+			<a class="ao-arch-row" href="/"><div class="ao-arch-row__route">/</div><div class="ao-arch-row__detail">Public landing — pre-rendered at build, ISR refresh hourly</div><div class="ao-arch-row__model">Static HTML</div></a>
+			<a class="ao-arch-row" href="/architecture"><div class="ao-arch-row__route">/architecture</div><div class="ao-arch-row__detail">This page — same SSG pipeline</div><div class="ao-arch-row__model">Static HTML</div></a>
+			<a class="ao-arch-row" href="/industries/logistics"><div class="ao-arch-row__route">/industries/:slug</div><div class="ao-arch-row__detail">Per-industry pages — six static landings</div><div class="ao-arch-row__model">Static HTML</div></a>
+			<a class="ao-arch-row" href="/track"><div class="ao-arch-row__route">/track and /track/:id</div><div class="ao-arch-row__detail">Customer tracking — HTMX fragments swap into the page on demand</div><div class="ao-arch-row__model">HTMX · scoped state</div></a>
+			<a class="ao-arch-row" href="/workspace"><div class="ao-arch-row__route">/workspace</div><div class="ao-arch-row__detail">React operator workspace — kanban, queue, activity feed</div><div class="ao-arch-row__model">React · SSR + hydrate</div></a>
+			<a class="ao-arch-row" href="/dashboard"><div class="ao-arch-row__route">/dashboard</div><div class="ao-arch-row__detail">Svelte exec dashboard — KPI cards + SVG trend charts</div><div class="ao-arch-row__model">Svelte · SSR + hydrate</div></a>
+			<a class="ao-arch-row" href="/admin"><div class="ao-arch-row__route">/admin</div><div class="ao-arch-row__detail">Angular admin — roles, integrations, audit log</div><div class="ao-arch-row__model">Angular · SSR + hydrate</div></a>
+			<a class="ao-arch-row" href="/field"><div class="ao-arch-row__route">/field</div><div class="ao-arch-row__detail">Mobile field worker — HTMX shell + Svelte islands for signature, photo, timer</div><div class="ao-arch-row__model">HTMX + Svelte islands</div></a>
+			<a class="ao-arch-row" href="/ai-briefing"><div class="ao-arch-row__route">/ai-briefing</div><div class="ao-arch-row__detail">Vue AI briefing — aiChat plugin streams through a mock provider</div><div class="ao-arch-row__model">Vue + AI WebSocket</div></a>
+		</div>
+	</section>
+
+	<section class="ao-section">
+		<div class="ao-section__head"><h2>Why this matters</h2><p class="ao-section__sub">Most teams pick one frontend stack and contort every surface to fit. AbsoluteJS lets you keep the right tool for the right job — without a second deploy target.</p></div>
+		<div class="ao-grid ao-grid--3">
+			<div class="ao-card"><h3>Public surfaces stay light</h3><p>Marketing and industry pages are pre-rendered HTML. No framework runtime ships unless a page actually needs one.</p></div>
+			<div class="ao-card"><h3>Customer flows stay simple</h3><p>HTMX fragments mean the customer-facing tracker and the field-tech app load fast even on weak networks and old phones.</p></div>
+			<div class="ao-card"><h3>App surfaces stay rich</h3><p>The operator workspace runs React because dispatchers need real UI affordances. The dashboard runs Svelte because it ticks every five seconds.</p></div>
+		</div>
+	</section>
+
+	<footer class="ao-mkt-foot"><span>AbsoluteOps · Architecture</span><span>Powered by AbsoluteJS · Bun · Elysia</span></footer>
+</div>
+<!--ABSOLUTEOPS_INSPECTOR-->
+</body>
+</html>

@@ -1,0 +1,28 @@
+/**
+ * @license Angular v21.0.0
+ * (c) 2010-2025 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+import * as i0 from '@angular/core';
+import { Injectable } from '@angular/core';
+class PlatformNavigation {
+  static ɵfac = function PlatformNavigation_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || PlatformNavigation)();
+  };
+  static ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+    token: PlatformNavigation,
+    factory: () => (() => window.navigation)(),
+    providedIn: 'platform'
+  });
+}
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PlatformNavigation, [{
+    type: Injectable,
+    args: [{
+      providedIn: 'platform',
+      useFactory: () => window.navigation
+    }]
+  }], null, null);
+})();
+export { PlatformNavigation };

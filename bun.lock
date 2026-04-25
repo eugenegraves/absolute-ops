@@ -5,7 +5,7 @@
     "": {
       "name": "absolute-ops",
       "dependencies": {
-        "@absolutejs/absolute": "0.17.12",
+        "@absolutejs/absolute": "0.19.0-beta.648",
         "@angular/common": "21.0.0",
         "@angular/compiler": "21.0.0",
         "@angular/compiler-cli": "21.0.0",
@@ -47,7 +47,19 @@
     },
   },
   "packages": {
-    "@absolutejs/absolute": ["@absolutejs/absolute@0.17.12", "", { "dependencies": { "@angular/compiler": "^21.0.0", "react-refresh": "^0.18.0" }, "peerDependencies": { "@angular/common": "^21.0.0", "@angular/compiler-cli": "^21.0.0", "@angular/core": "^21.0.0", "@angular/platform-browser": "^21.0.0", "@angular/platform-server": "^21.0.0", "@angular/ssr": "^21.0.0", "elysia": "^1.4.0", "react": "^19.2.0", "react-dom": "^19.2.0", "svelte": "^5.35.2", "vue": "^3.5.27", "zone.js": "^0.15.0" }, "optionalPeers": ["@angular/common", "@angular/compiler-cli", "@angular/core", "@angular/platform-browser", "@angular/platform-server", "@angular/ssr", "react", "react-dom", "svelte", "vue", "zone.js"], "bin": { "absolute": "dist/cli/index.js" } }, "sha512-dKz5gjCyI+Ro3sKI1CH6c5HblZCZIlt51T8DgEV+fmMA2r1MkQW20/kfZjspDkWnVtNOMnZU7qYnI6tdflhJjQ=="],
+    "@absolutejs/absolute": ["@absolutejs/absolute@0.19.0-beta.648", "", { "dependencies": { "@angular/compiler": "^21.0.0", "zustand": "^5.0.12" }, "optionalDependencies": { "@absolutejs/native-darwin-arm64": "0.19.0-beta.648", "@absolutejs/native-darwin-x64": "0.19.0-beta.648", "@absolutejs/native-linux-arm64": "0.19.0-beta.648", "@absolutejs/native-linux-x64": "0.19.0-beta.648", "@absolutejs/native-windows-arm64": "0.19.0-beta.648", "@absolutejs/native-windows-x64": "0.19.0-beta.648" }, "peerDependencies": { "@angular/common": "^21.0.0", "@angular/compiler-cli": "^21.0.0", "@angular/core": "^21.0.0", "@angular/platform-browser": "^21.0.0", "@angular/platform-server": "^21.0.0", "@angular/ssr": "^21.0.0", "elysia": "^1.4.0", "react": "^19.2.0", "react-dom": "^19.2.0", "react-refresh": "^0.18.0", "sharp": ">=0.33.0", "svelte": "^5.35.2", "vue": "^3.5.27", "zone.js": "^0.15.0" }, "optionalPeers": ["@angular/common", "@angular/compiler-cli", "@angular/core", "@angular/platform-browser", "@angular/platform-server", "@angular/ssr", "react", "react-dom", "react-refresh", "sharp", "svelte", "vue", "zone.js"], "bin": { "absolute": "dist/cli/index.js" } }, "sha512-pZNHUYKdlNaxYOyAzBLplv0nJHMuan/ujzI0JZnCe9juE8Av2ceUEjnlSHk00qPvZZ/95NfzUqgt5tBkJCZUaQ=="],
+
+    "@absolutejs/native-darwin-arm64": ["@absolutejs/native-darwin-arm64@0.19.0-beta.648", "", { "os": "darwin", "cpu": "arm64" }, "sha512-8Wb1uew2lBj1pho6j9aOI/PUHLoBIG6x+VTNzo6ven7Z7454+eTu7tiTOjAPmiDy8uGCRwDzY2y1Z6DV/3oTbA=="],
+
+    "@absolutejs/native-darwin-x64": ["@absolutejs/native-darwin-x64@0.19.0-beta.648", "", { "os": "darwin", "cpu": "x64" }, "sha512-onYS7yHAGhYx53KRbwqJ/hgUfSkwO4RVuIM4NxfL43vkRKc8TxWkTiO42yc7bvVf8RiamOdrtV3UkTKPv3rWqw=="],
+
+    "@absolutejs/native-linux-arm64": ["@absolutejs/native-linux-arm64@0.19.0-beta.648", "", { "os": "linux", "cpu": "arm64" }, "sha512-bW3EMOFnyL+oZUcv/aRRW8G5j9hy173rbopxwngGIJ1pz4AoKLBBU9RAn5r8s8cLFxdL0wEw641G1jcahjZg+Q=="],
+
+    "@absolutejs/native-linux-x64": ["@absolutejs/native-linux-x64@0.19.0-beta.648", "", { "os": "linux", "cpu": "x64" }, "sha512-+sgNYIfFMcDiCmBYmMFPH4pJN6MMon+PqmU3QiJvADyfvaRrw3ykm3W7EZt5i4xS5vpMB93gNREafhYjlB6S3Q=="],
+
+    "@absolutejs/native-windows-arm64": ["@absolutejs/native-windows-arm64@0.19.0-beta.648", "", { "os": "win32", "cpu": "arm64" }, "sha512-oeIveTpSemAGKHN8H03ihvBKUhpIshKLFbV6/Kh8mBis3We0AempI9rA2kmpteu6hMcY/icjeBUk96pFC9XmJA=="],
+
+    "@absolutejs/native-windows-x64": ["@absolutejs/native-windows-x64@0.19.0-beta.648", "", { "os": "win32", "cpu": "x64" }, "sha512-cYVJhSSTWavwlfor0DSUd2Xz/dW5BReom8MmdxN4QA6PncU/9yTMWcCtLZehlQld8kpDncryWtOURwJZ+g4Y+A=="],
 
     "@angular/common": ["@angular/common@21.0.0", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@angular/core": "21.0.0", "rxjs": "^6.5.3 || ^7.4.0" } }, "sha512-uFvQDYU5X5nEnI9C4Bkdxcu4aIzNesGLJzmFlnwChVxB4BxIRF0uHL0oRhdkInGTIzPDJPH4nF6B/22c5gDVqA=="],
 
@@ -621,8 +633,6 @@
 
     "react-is": ["react-is@16.13.1", "", {}, "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="],
 
-    "react-refresh": ["react-refresh@0.18.0", "", {}, "sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw=="],
-
     "readdirp": ["readdirp@4.1.2", "", {}, "sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg=="],
 
     "reflect-metadata": ["reflect-metadata@0.2.2", "", {}, "sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q=="],
@@ -760,6 +770,8 @@
     "zod": ["zod@3.25.76", "", {}, "sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ=="],
 
     "zod-validation-error": ["zod-validation-error@4.0.2", "", { "peerDependencies": { "zod": "^3.25.0 || ^4.0.0" } }, "sha512-Q6/nZLe6jxuU80qb/4uJ4t5v2VEZ44lzQjPDhYJNztRQ4wyWc6VF3D3Kb/fAuPetZQnhS3hnajCf9CsWesghLQ=="],
+
+    "zustand": ["zustand@5.0.12", "", { "peerDependencies": { "@types/react": ">=18.0.0", "immer": ">=9.0.6", "react": ">=18.0.0", "use-sync-external-store": ">=1.2.0" }, "optionalPeers": ["@types/react", "immer", "react", "use-sync-external-store"] }, "sha512-i77ae3aZq4dhMlRhJVCYgMLKuSiZAaUPAct2AksxQ+gOtimhGMdXljRT21P5BNpeT4kXlLIckvkPM029OljD7g=="],
 
     "@angular/compiler-cli/@babel/core": ["@babel/core@7.28.4", "", { "dependencies": { "@babel/code-frame": "^7.27.1", "@babel/generator": "^7.28.3", "@babel/helper-compilation-targets": "^7.27.2", "@babel/helper-module-transforms": "^7.28.3", "@babel/helpers": "^7.28.4", "@babel/parser": "^7.28.4", "@babel/template": "^7.27.2", "@babel/traverse": "^7.28.4", "@babel/types": "^7.28.4", "@jridgewell/remapping": "^2.3.5", "convert-source-map": "^2.0.0", "debug": "^4.1.0", "gensync": "^1.0.0-beta.2", "json5": "^2.2.3", "semver": "^6.3.1" } }, "sha512-2BCOP7TN8M+gVDj7/ht3hsaO/B/n5oDbiAyyvnRlNOs+u1o+JWNYTQrmpuNp1/Wq2gcFrI01JAW+paEKDMx/CA=="],
 

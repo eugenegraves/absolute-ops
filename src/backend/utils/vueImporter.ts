@@ -1,3 +1,3 @@
-import VueExample from '../../frontend/vue/pages/VueExample.vue';
+import AIBriefing from '../../frontend/vue/pages/AIBriefing.vue';
 
-export const vueImports = { VueExample } as const;
+export const vueImports = { AIBriefing } as const;

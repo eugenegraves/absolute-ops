@@ -1,0 +1,23 @@
+{
+	"angularCompilerOptions": {
+		"enableI18nLegacyMessageIdFormat": false,
+		"strictInjectionParameters": true,
+		"strictTemplates": true
+	},
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"incremental": true,
+		"jsx": "react-jsx",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"noUncheckedIndexedAccess": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "ESNext",
+		"tsBuildInfoFile": ".absolutejs/tsconfig.tsbuildinfo",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"useDefineForClassFields": false
+	}
+}

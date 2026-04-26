@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onUnmounted, ref } from 'vue';
 import { useAIStream } from '@absolutejs/absolute/vue/ai';
+import { PRIMARY_NAV } from '../../../shared/nav';
 import Inspector from '../components/Inspector.vue';
 import ToolCard from '../components/ToolCard.vue';
 
@@ -68,14 +69,13 @@ const renderContent = (content: string | undefined | null) => content ?? '';
 				<span>AbsoluteOps</span>
 			</a>
 			<div class="ao-nav">
-				<a href="/">Home</a>
-				<a href="/architecture">Architecture</a>
-				<a href="/track">Track</a>
-				<a href="/workspace">Workspace</a>
-				<a href="/dashboard">Dashboard</a>
-				<a href="/admin">Admin</a>
+				<a
+					v-for="item in PRIMARY_NAV"
+					:key="item.routeKey"
+					:href="item.href"
+					:aria-current="item.routeKey === 'aiBriefing' ? 'page' : null"
+				>{{ item.label }}</a>
 			</div>
-			<a class="ao-cta" href="/dashboard">Dashboard</a>
 		</nav>
 
 		<header class="ao-ai__head">

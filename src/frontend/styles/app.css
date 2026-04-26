@@ -70,6 +70,9 @@
 .ao-nav a:hover { color: var(--fg); }
 .ao-nav a:hover::after { transform: scaleX(1); }
 
+.ao-nav a[aria-current="page"] { color: var(--fg); font-weight: 600; }
+.ao-nav a[aria-current="page"]::after { transform: scaleX(1); height: 2px; background: var(--accent); }
+
 .ao-cta {
 	display: inline-flex;
 	align-items: center;

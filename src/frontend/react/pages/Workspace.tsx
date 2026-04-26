@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { PRIMARY_NAV } from '../../../shared/nav';
 import type {
 	AuditEvent,
 	IndustrySlug,
@@ -115,14 +116,16 @@ export const Workspace = ({ cssPath, initialOperations, initialAudit }: Props) =
 							<span>AbsoluteOps</span>
 						</a>
 						<div className="ao-nav">
-							<a href="/">Home</a>
-							<a href="/architecture">Architecture</a>
-							<a href="/track">Track</a>
-							<a href="/dashboard">Dashboard</a>
-							<a href="/admin">Admin</a>
-							<a href="/ai-briefing">AI Briefing</a>
+							{PRIMARY_NAV.map((item) => (
+								<a
+									key={item.routeKey}
+									href={item.href}
+									aria-current={item.routeKey === 'workspace' ? 'page' : undefined}
+								>
+									{item.label}
+								</a>
+							))}
 						</div>
-						<a className="ao-cta" href="/dashboard">Open Dashboard</a>
 					</nav>
 
 					<header className="ao-ws__head">

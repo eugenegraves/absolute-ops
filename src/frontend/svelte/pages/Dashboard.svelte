@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onDestroy, onMount } from 'svelte';
+	import { PRIMARY_NAV } from '../../../shared/nav';
 	import type {
 		KPISeries,
 		KPISnapshot
@@ -106,14 +107,10 @@
 	<nav class="ao-topnav">
 		<a class="ao-brand" href="/"><span class="ao-brand-mark"></span><span>AbsoluteOps</span></a>
 		<div class="ao-nav">
-			<a href="/">Home</a>
-			<a href="/architecture">Architecture</a>
-			<a href="/track">Track</a>
-			<a href="/workspace">Workspace</a>
-			<a href="/admin">Admin</a>
-			<a href="/ai-briefing">AI Briefing</a>
+			{#each PRIMARY_NAV as item (item.routeKey)}
+				<a href={item.href} aria-current={item.routeKey === 'dashboard' ? 'page' : undefined}>{item.label}</a>
+			{/each}
 		</div>
-		<a class="ao-cta" href="/ai-briefing">AI Briefing</a>
 	</nav>
 
 	<header class="ao-dash__head">

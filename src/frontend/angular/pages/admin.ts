@@ -1,4 +1,5 @@
 import { Component, inject, InjectionToken } from '@angular/core';
+import { PRIMARY_NAV, type NavItem } from '../../../shared/nav';
 import type { AuditEvent } from '../../../shared/types';
 import { AdminNavComponent, type Section } from '../components/admin-nav.component';
 import { AuditLogComponent } from '../components/audit-log.component';
@@ -33,14 +34,10 @@ type AdminPageProps = {
 			<nav class="ao-topnav">
 				<a class="ao-brand" href="/"><span class="ao-brand-mark"></span><span>AbsoluteOps</span></a>
 				<div class="ao-nav">
-					<a href="/">Home</a>
-					<a href="/architecture">Architecture</a>
-					<a href="/track">Track</a>
-					<a href="/workspace">Workspace</a>
-					<a href="/dashboard">Dashboard</a>
-					<a href="/ai-briefing">AI Briefing</a>
+					@for (item of nav; track item.routeKey) {
+						<a [attr.href]="item.href" [attr.aria-current]="item.routeKey === 'admin' ? 'page' : null">{{ item.label }}</a>
+					}
 				</div>
-				<a class="ao-cta" href="/dashboard">Open Dashboard</a>
 			</nav>
 
 			<header class="ao-admin__head">
@@ -68,6 +65,7 @@ type AdminPageProps = {
 export class AdminComponent {
 	active: Section = 'roles';
 	audit: AuditEvent[];
+	nav: NavItem[] = PRIMARY_NAV;
 
 	constructor() {
 		this.audit = inject(AUDIT_EVENTS_TOKEN, { optional: true }) ?? [];

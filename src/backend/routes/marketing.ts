@@ -10,6 +10,7 @@ import {
 import type { Industry, IndustrySlug, RouteKey } from '../../shared/types';
 import { renderInspectorMarkup } from '../inspector/renderInspectorMarkup';
 import { injectInspectorIntoHTML } from '../utils/pageEnvelope';
+import { renderTopNav } from '../utils/renderTopNav';
 
 const escape = (s: string) =>
 	s
@@ -57,11 +58,7 @@ const renderIndustryPage = (
 </head>
 <body>
 <div class="ao-shell">
-<nav class="ao-topnav">
-<a class="ao-brand" href="/"><span class="ao-brand-mark"></span><span>AbsoluteOps</span></a>
-<div class="ao-nav"><a href="/">Home</a><a href="/architecture">Architecture</a><a href="/industries/logistics">Industries</a><a href="/track">Track</a><a href="/workspace">Workspace</a><a href="/ai-briefing">AI Briefing</a></div>
-<a class="ao-cta" href="/workspace">Open Command Center</a>
-</nav>
+${renderTopNav(routeKey)}
 <header class="ao-mkt-hero">
 <span class="ao-mkt-hero__eyebrow"><span class="ao-pill">${escape(industry.label)}</span></span>
 <h1>${escape(industry.tagline)}</h1>
@@ -85,7 +82,7 @@ const renderIndustryPage = (
 <div class="ao-section__head"><h2>Other industries</h2></div>
 <div class="ao-grid ao-grid--3">${otherIndustries}</div>
 </section>
-<footer class="ao-mkt-foot"><span>AbsoluteOps · ${escape(industry.label)}</span><span>Pre-rendered · ISR 1h</span></footer>
+<footer class="ao-mkt-foot"><span>AbsoluteOps · ${escape(industry.label)}</span><span><a class="ao-mkt-foot__link" href="/architecture">Architecture</a> · Pre-rendered · ISR 1h</span></footer>
 </div>
 ${inspector}
 </body>

@@ -1,9 +1,9 @@
-<script lang="ts">
+<script>
 	import { onDestroy } from 'svelte';
 
 	let elapsed = 0;
 	let running = false;
-	let intervalId: Timer | null = null;
+	let intervalId = null;
 
 	function start() {
 		if (running) {
@@ -28,7 +28,7 @@
 		elapsed = 0;
 	}
 
-	const format = (s: number) => {
+	const format = (s) => {
 		const m = Math.floor(s / 60);
 		const sec = s % 60;
 		return `${m.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;

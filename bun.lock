@@ -5,7 +5,7 @@
     "": {
       "name": "absolute-ops",
       "dependencies": {
-        "@absolutejs/absolute": "0.19.0-beta.686",
+        "@absolutejs/absolute": "0.19.0-beta.701",
         "@angular/common": "21.0.0",
         "@angular/compiler": "21.0.0",
         "@angular/compiler-cli": "21.0.0",
@@ -47,19 +47,19 @@
     },
   },
   "packages": {
-    "@absolutejs/absolute": ["@absolutejs/absolute@0.19.0-beta.686", "", { "dependencies": { "@angular/compiler": "^21.0.0", "zustand": "^5.0.12" }, "optionalDependencies": { "@absolutejs/native-darwin-arm64": "0.19.0-beta.686", "@absolutejs/native-darwin-x64": "0.19.0-beta.686", "@absolutejs/native-linux-arm64": "0.19.0-beta.686", "@absolutejs/native-linux-x64": "0.19.0-beta.686", "@absolutejs/native-windows-arm64": "0.19.0-beta.686", "@absolutejs/native-windows-x64": "0.19.0-beta.686" }, "peerDependencies": { "@angular/common": "^21.0.0", "@angular/compiler-cli": "^21.0.0", "@angular/core": "^21.0.0", "@angular/platform-browser": "^21.0.0", "@angular/platform-server": "^21.0.0", "@angular/ssr": "^21.0.0", "elysia": "^1.4.0", "react": "^19.2.0", "react-dom": "^19.2.0", "react-refresh": "^0.18.0", "sharp": ">=0.33.0", "svelte": "^5.35.2", "typescript": "^5.9.3", "vue": "^3.5.27", "zone.js": "^0.15.0" }, "optionalPeers": ["@angular/common", "@angular/compiler-cli", "@angular/core", "@angular/platform-browser", "@angular/platform-server", "@angular/ssr", "react", "react-dom", "react-refresh", "sharp", "svelte", "typescript", "vue", "zone.js"], "bin": { "absolute": "dist/cli/index.js" } }, "sha512-rTOQmKjmiVjYOpKzAdLxT8ZSUrlJmAr4lsCqw2fCQLQgKogxXH291WLU4F6nDwnccj8wr6Er9yQixKfc8lX58w=="],
+    "@absolutejs/absolute": ["@absolutejs/absolute@0.19.0-beta.701", "", { "dependencies": { "@angular/compiler": "^21.0.0", "zustand": "^5.0.12" }, "optionalDependencies": { "@absolutejs/native-darwin-arm64": "0.19.0-beta.701", "@absolutejs/native-darwin-x64": "0.19.0-beta.701", "@absolutejs/native-linux-arm64": "0.19.0-beta.701", "@absolutejs/native-linux-x64": "0.19.0-beta.701", "@absolutejs/native-windows-arm64": "0.19.0-beta.701", "@absolutejs/native-windows-x64": "0.19.0-beta.701" }, "peerDependencies": { "@angular/common": "^21.0.0", "@angular/compiler-cli": "^21.0.0", "@angular/core": "^21.0.0", "@angular/platform-browser": "^21.0.0", "@angular/platform-server": "^21.0.0", "@angular/ssr": "^21.0.0", "bun-plugin-tailwind": "^0.1.2", "elysia": "^1.4.0", "less": "^4.6.0", "postcss": "^8.5.0", "react": "^19.2.0", "react-dom": "^19.2.0", "react-refresh": "^0.18.0", "sass": "^1.99.0", "sharp": ">=0.33.0", "stylus": "^0.64.0", "svelte": "^5.35.2", "tailwindcss": "^4.1.0", "typescript": "^5.9.3", "vue": "^3.5.27", "zone.js": "^0.15.0" }, "optionalPeers": ["@angular/common", "@angular/compiler-cli", "@angular/core", "@angular/platform-browser", "@angular/platform-server", "@angular/ssr", "bun-plugin-tailwind", "less", "postcss", "react", "react-dom", "react-refresh", "sass", "sharp", "stylus", "svelte", "tailwindcss", "typescript", "vue", "zone.js"], "bin": { "absolute": "dist/cli/index.js" } }, "sha512-nPtMiR72bEC5N+wljUa/gOGvJs36scMX9F+wxKsyT40VflY2TchmrLwl837xhSHOc45/t9A8Wy30Fl6eUgvg8Q=="],
 
-    "@absolutejs/native-darwin-arm64": ["@absolutejs/native-darwin-arm64@0.19.0-beta.686", "", { "os": "darwin", "cpu": "arm64" }, "sha512-W+yXuc2hZDeImE9LaDCyg7EEstuj/DfNCsUwiQwqy4m6LgW579CO8lycHtcYc/A0ZQ60wrS5Em07KWT3PYVLsQ=="],
+    "@absolutejs/native-darwin-arm64": ["@absolutejs/native-darwin-arm64@0.19.0-beta.701", "", { "os": "darwin", "cpu": "arm64" }, "sha512-6eKvx7XKKoEb+BoOeX/3OfKwIzsl6pVX3sAgZJlIp7GDB3f7D1sjmZwAxinoeZ7yJhN9bIY5vkaN9spBU8SdVg=="],
 
-    "@absolutejs/native-darwin-x64": ["@absolutejs/native-darwin-x64@0.19.0-beta.686", "", { "os": "darwin", "cpu": "x64" }, "sha512-EjkdvjXLSXhXYCZRSmYM0wQ1V9i0Iyzph64p+EOGx4ZtBZxfsJOpZJ5RXWgyJJhhwsuq42CcI+7WaXWhhfb//w=="],
+    "@absolutejs/native-darwin-x64": ["@absolutejs/native-darwin-x64@0.19.0-beta.701", "", { "os": "darwin", "cpu": "x64" }, "sha512-Jlx/913qf8rw3DBXli20RkjhhvIcBLO+yOIyvM85hlMOLIpGqDRsn3F6LsJkf/bIGTMEEJUZYicS22/UuxMSPA=="],
 
-    "@absolutejs/native-linux-arm64": ["@absolutejs/native-linux-arm64@0.19.0-beta.686", "", { "os": "linux", "cpu": "arm64" }, "sha512-9MGGZWsVYKBqIu6q8aczkdrXipyJT6IAFMY06eWeB/yZmtixSS1/wng+9dfnKJ3FXuarWg3riDHx7IF3L0IcNg=="],
+    "@absolutejs/native-linux-arm64": ["@absolutejs/native-linux-arm64@0.19.0-beta.701", "", { "os": "linux", "cpu": "arm64" }, "sha512-pXBqlcZ/hxNng+u1wkYx4ZKnhW8R7QOqbj3OgXRAFm157VCcb0yaj4kRA9eRN90tC5Af5ZoTTsuJOaLVTQ6QpQ=="],
 
-    "@absolutejs/native-linux-x64": ["@absolutejs/native-linux-x64@0.19.0-beta.686", "", { "os": "linux", "cpu": "x64" }, "sha512-VS+wpnVERN7SNQAEiGRimpZBhNJAOgqEmF3FfdXQ7p1obJVOefzCxlewCYFojvpMGylq6fWDkSv+307Wh0ojGw=="],
+    "@absolutejs/native-linux-x64": ["@absolutejs/native-linux-x64@0.19.0-beta.701", "", { "os": "linux", "cpu": "x64" }, "sha512-Yc3pU3nQQFY0KBbq+rJuoy4YOgIIZLuj5Il/w2Y0E+JEEhvB9nF1f8zPiWBhXcmrhFEpavZa9iN7ENH2AVBRnQ=="],
 
-    "@absolutejs/native-windows-arm64": ["@absolutejs/native-windows-arm64@0.19.0-beta.686", "", { "os": "win32", "cpu": "arm64" }, "sha512-lY4U8fo3ckXHEIGXgFBO4diR+GlDUhxt7bIygo6x5xxSpUNAnoukj11DuJBrzhf50pogc+ddRUiLi2IF6mZLDA=="],
+    "@absolutejs/native-windows-arm64": ["@absolutejs/native-windows-arm64@0.19.0-beta.701", "", { "os": "win32", "cpu": "arm64" }, "sha512-V1nzm+8R55iR8X1eLMKDOTh0IysEhwiY9nGNlZAD4boXvG89OUkpQUQLdCLMuiJezjWUQ5UfpC4DGKdBY/VR1g=="],
 
-    "@absolutejs/native-windows-x64": ["@absolutejs/native-windows-x64@0.19.0-beta.686", "", { "os": "win32", "cpu": "x64" }, "sha512-Sb1TTEnhF9rxPIakrr5ASLNLZ81kSyUiCe8JXLMB3NPWVv2MasdaHQ9G8vpJqSTFPA0hWclMxxi5nm7+UlZLtw=="],
+    "@absolutejs/native-windows-x64": ["@absolutejs/native-windows-x64@0.19.0-beta.701", "", { "os": "win32", "cpu": "x64" }, "sha512-T2pu0JByLha2du32qukxayiCAH94Dc6Usoy3hUrp3hW/NPr78ETb4DvLhbXmlNiDH2juRtvlouy3wgw5fnREQw=="],
 
     "@angular/common": ["@angular/common@21.0.0", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@angular/core": "21.0.0", "rxjs": "^6.5.3 || ^7.4.0" } }, "sha512-uFvQDYU5X5nEnI9C4Bkdxcu4aIzNesGLJzmFlnwChVxB4BxIRF0uHL0oRhdkInGTIzPDJPH4nF6B/22c5gDVqA=="],
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onUnmounted, ref } from 'vue';
-import { useAIStream } from '@absolutejs/absolute/vue/ai';
+import { useAIStream } from '../composables/useAIStream';
 import { PRIMARY_NAV } from '../../../shared/nav';
 import Inspector from '../components/Inspector.vue';
 import ToolCard from '../components/ToolCard.vue';

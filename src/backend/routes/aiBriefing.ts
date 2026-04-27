@@ -2,7 +2,7 @@ import {
 	asset,
 	generateHeadElement
 } from '@absolutejs/absolute';
-import { aiChat } from '@absolutejs/absolute/ai';
+import { aiChat } from '../ai/aiChat';
 import { handleVuePageRequest } from '@absolutejs/absolute/vue';
 import { Elysia } from 'elysia';
 import type AIBriefing from '../../frontend/vue/pages/AIBriefing.vue';

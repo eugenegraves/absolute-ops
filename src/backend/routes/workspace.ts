@@ -1,4 +1,5 @@
-import { asset, handleReactPageRequest } from '@absolutejs/absolute';
+import { asset } from '@absolutejs/absolute';
+import { handleReactPageRequest } from '@absolutejs/absolute/react';
 import { Elysia, t } from 'elysia';
 import { Workspace } from '../../frontend/react/pages/Workspace';
 import { auditEvents } from '../../shared/audit';

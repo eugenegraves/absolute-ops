@@ -1,29 +1,27 @@
 <script lang="ts">
-	export let label: string;
-	export let points: number[];
-	export let valueText: string;
+	let { label, points, valueText }: { label: string; points: number[]; valueText: string } = $props();
 
 	const width = 320;
 	const height = 80;
 	const padding = 4;
 
-	$: min = Math.min(...points);
-	$: max = Math.max(...points);
-	$: range = max - min || 1;
-	$: step = points.length > 1 ? (width - padding * 2) / (points.length - 1) : 0;
+	let min = $derived(Math.min(...points));
+	let max = $derived(Math.max(...points));
+	let range = $derived(max - min || 1);
+	let step = $derived(points.length > 1 ? (width - padding * 2) / (points.length - 1) : 0);
 
-	$: path = points
+	let path = $derived(points
 		.map((point, index) => {
 			const x = padding + index * step;
 			const y =
 				height - padding - ((point - min) / range) * (height - padding * 2);
 			return `${index === 0 ? 'M' : 'L'} ${x.toFixed(1)} ${y.toFixed(1)}`;
 		})
-		.join(' ');
+		.join(' '));
 
-	$: fill = points.length
+	let fill = $derived(points.length
 		? `${path} L ${(padding + (points.length - 1) * step).toFixed(1)} ${height - padding} L ${padding} ${height - padding} Z`
-		: '';
+		: '');
 </script>
 
 <div class="ao-trend">

@@ -1,9 +1,9 @@
 <script>
 	import { onDestroy } from 'svelte';
 
-	let elapsed = 0;
-	let running = false;
-	let intervalId = null;
+	let elapsed = $state(0);
+	let running = $state(false);
+	let intervalId = $state(null);
 
 	function start() {
 		if (running) {
@@ -43,11 +43,11 @@
 	<div class="ao-timer__display">{format(elapsed)}</div>
 	<div class="ao-timer__row">
 		{#if running}
-			<button type="button" class="ao-cta ao-cta--ghost" on:click={pause}>Pause</button>
+			<button type="button" class="ao-cta ao-cta--ghost" onclick={pause}>Pause</button>
 		{:else}
-			<button type="button" class="ao-cta" on:click={start}>Start</button>
+			<button type="button" class="ao-cta" onclick={start}>Start</button>
 		{/if}
-		<button type="button" class="ao-cta ao-cta--ghost" on:click={reset}>Reset</button>
+		<button type="button" class="ao-cta ao-cta--ghost" onclick={reset}>Reset</button>
 	</div>
 </div>
 

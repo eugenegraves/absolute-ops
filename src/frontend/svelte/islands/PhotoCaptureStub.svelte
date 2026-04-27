@@ -1,6 +1,6 @@
 <script lang="ts">
-	let captured: string | null = null;
-	let pending = false;
+	let captured: string | null = $state(null);
+	let pending = $state(false);
 
 	const fakeCapture = async () => {
 		pending = true;
@@ -37,9 +37,9 @@
 	</div>
 	<div class="ao-photo__row">
 		{#if captured}
-			<button type="button" class="ao-cta ao-cta--ghost" on:click={reset}>Retake</button>
+			<button type="button" class="ao-cta ao-cta--ghost" onclick={reset}>Retake</button>
 		{:else}
-			<button type="button" class="ao-cta" on:click={fakeCapture} disabled={pending}>Capture</button>
+			<button type="button" class="ao-cta" onclick={fakeCapture} disabled={pending}>Capture</button>
 		{/if}
 	</div>
 </div>

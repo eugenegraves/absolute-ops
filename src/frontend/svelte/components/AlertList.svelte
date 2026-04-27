@@ -5,7 +5,7 @@
 		region: string;
 		level: 'info' | 'warn' | 'crit';
 	};
-	export let alerts: Alert[];
+	let { alerts }: { alerts: Alert[] } = $props();
 
 	const pillClass = (level: Alert['level']) =>
 		level === 'crit'

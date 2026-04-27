@@ -7,9 +7,9 @@
 	import { inspectorMetadata } from '../../../shared/inspectorMetadata';
 	import type { RouteKey } from '../../../shared/types';
 
-	export let routeKey: RouteKey;
-	let isOpen = false;
-	$: m = inspectorMetadata[routeKey];
+	let { routeKey }: { routeKey: RouteKey } = $props();
+	let isOpen = $state(false);
+	let m = $derived(inspectorMetadata[routeKey]);
 
 	const toggle = () => {
 		isOpen = !isOpen;
@@ -30,7 +30,7 @@
 	};
 </script>
 
-<svelte:window on:keydown={onKeydown} />
+<svelte:window onkeydown={onKeydown} />
 
 {@html `<style>${INSPECTOR_INLINE_CSS}</style>`}
 <aside id="ao-inspector" class="ao-inspector" data-open={isOpen ? '1' : '0'} data-framework={m.framework}>
@@ -38,7 +38,7 @@
 		type="button"
 		class="ao-inspector__pill"
 		aria-label="Toggle Framework Inspector — explains which framework rendered this page and why"
-		on:click={toggle}
+		onclick={toggle}
 	>
 		<span class="ao-inspector__dot"></span>
 		<span>{inspectorPillLabel(m)}</span>

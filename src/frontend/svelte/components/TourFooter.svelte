@@ -2,8 +2,8 @@
 	import { renderTourFooter } from '../../../backend/utils/renderTourFooter';
 	import type { RouteKey } from '../../../shared/types';
 
-	export let routeKey: RouteKey;
-	$: html = renderTourFooter(routeKey);
+	let { routeKey }: { routeKey: RouteKey } = $props();
+	let html = $derived(renderTourFooter(routeKey));
 </script>
 
 {#if html}

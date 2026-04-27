@@ -26,15 +26,17 @@
 		alerts: number;
 	};
 
-	export let cssPath: string;
-	export let snapshots: KPISnapshot[];
-	export let series: KPISeries[];
-	export let regions: Region[];
-	export let alerts: Alert[];
-	export let pulse: string;
+	let { cssPath, snapshots, series, regions, alerts, pulse }: {
+		cssPath: string;
+		snapshots: KPISnapshot[];
+		series: KPISeries[];
+		regions: Region[];
+		alerts: Alert[];
+		pulse: string;
+	} = $props();
 
-	let snapshotIndex = 0;
-	let intervalId: ReturnType<typeof setInterval> | null = null;
+	let snapshotIndex = $state(0);
+	let intervalId: ReturnType<typeof setInterval> | null = $state(null);
 
 	onMount(() => {
 		intervalId = setInterval(() => {
@@ -46,14 +48,14 @@
 		if (intervalId) clearInterval(intervalId);
 	});
 
-	$: currentSnapshot = snapshots[snapshotIndex] ?? snapshots[0];
+	let currentSnapshot = $derived(snapshots[snapshotIndex] ?? snapshots[0]);
 
 	const formatCurrency = (n: number) =>
 		n >= 1_000_000
 			? `$${(n / 1_000_000).toFixed(2)}M`
 			: `$${(n / 1_000).toFixed(0)}K`;
 
-	$: cards = !currentSnapshot
+	let cards = $derived(!currentSnapshot
 		? []
 		: [
 				{
@@ -92,7 +94,7 @@
 					label: 'Team Utilization',
 					value: `${currentSnapshot.teamUtilization}%`
 				}
-			];
+			]);
 </script>
 
 <svelte:head>

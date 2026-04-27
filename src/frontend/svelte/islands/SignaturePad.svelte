@@ -1,7 +1,7 @@
 <script lang="ts">
 	let canvas: HTMLCanvasElement;
-	let drawing = false;
-	let hasStrokes = false;
+	let drawing = $state(false);
+	let hasStrokes = $state(false);
 
 	const start = (event: PointerEvent) => {
 		drawing = true;
@@ -52,15 +52,15 @@
 		bind:this={canvas}
 		width="640"
 		height="200"
-		on:pointerdown={start}
-		on:pointermove={move}
-		on:pointerup={end}
-		on:pointercancel={end}
-		on:pointerleave={end}
+		onpointerdown={start}
+		onpointermove={move}
+		onpointerup={end}
+		onpointercancel={end}
+		onpointerleave={end}
 	></canvas>
 	<div class="ao-signature__row">
-		<button type="button" class="ao-cta ao-cta--ghost" on:click={clear}>Clear</button>
-		<button type="button" class="ao-cta" on:click={save} disabled={!hasStrokes}>Save signature</button>
+		<button type="button" class="ao-cta ao-cta--ghost" onclick={clear}>Clear</button>
+		<button type="button" class="ao-cta" onclick={save} disabled={!hasStrokes}>Save signature</button>
 	</div>
 </div>
 

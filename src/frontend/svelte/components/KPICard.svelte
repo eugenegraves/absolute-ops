@@ -1,8 +1,10 @@
 <script lang="ts">
-	export let label: string;
-	export let value: string;
-	export let delta: string;
-	export let direction: 'up' | 'down' | 'neutral';
+	let { label, value, delta, direction }: {
+		label: string;
+		value: string;
+		delta: string;
+		direction: 'up' | 'down' | 'neutral';
+	} = $props();
 </script>
 
 <div class="ao-kpi">

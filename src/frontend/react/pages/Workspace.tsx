@@ -10,6 +10,7 @@ import { ActivityFeed } from '../components/ActivityFeed';
 import { FilterBar, type Priority } from '../components/FilterBar';
 import { Inspector } from '../components/Inspector';
 import { QueueColumn } from '../components/QueueColumn';
+import { TourFooter } from '../components/TourFooter';
 
 type Props = {
 	cssPath: string;
@@ -120,8 +121,10 @@ export const Workspace = ({ cssPath, initialOperations, initialAudit }: Props) =
 								<a
 									key={item.routeKey}
 									href={item.href}
+									data-framework={item.framework}
 									aria-current={item.routeKey === 'workspace' ? 'page' : undefined}
 								>
+									<span className="ao-nav__chip" aria-hidden="true" />
 									{item.label}
 								</a>
 							))}
@@ -129,7 +132,7 @@ export const Workspace = ({ cssPath, initialOperations, initialAudit }: Props) =
 					</nav>
 
 					<header className="ao-ws__head">
-						<span className="ao-pill">React · SSR + hydrate</span>
+						<span className="ao-fw-pill" data-framework="react"><span className="ao-fw-pill__dot" aria-hidden="true" />React · SSR + hydrate</span>
 						<h1>Operator Workspace</h1>
 						<p style={{ color: 'var(--fg-muted)' }}>
 							Live kanban for the dispatch desk. Filter by industry and priority, search any
@@ -161,6 +164,7 @@ export const Workspace = ({ cssPath, initialOperations, initialAudit }: Props) =
 						<ActivityFeed events={audit} />
 					</div>
 				</div>
+				<TourFooter routeKey="workspace" />
 				<Inspector routeKey="workspace" />
 			</body>
 		</html>

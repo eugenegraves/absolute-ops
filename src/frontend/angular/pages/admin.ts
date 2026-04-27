@@ -7,6 +7,7 @@ import { ComplianceComponent } from '../components/compliance.component';
 import { InspectorComponent } from '../components/inspector.component';
 import { IntegrationsComponent } from '../components/integrations.component';
 import { RolesMatrixComponent } from '../components/roles-matrix.component';
+import { TourFooterComponent } from '../components/tour-footer.component';
 import { WorkflowListComponent } from '../components/workflow-list.component';
 
 export const AUDIT_EVENTS_TOKEN = new InjectionToken<AuditEvent[]>(
@@ -25,7 +26,8 @@ type AdminPageProps = {
 		AuditLogComponent,
 		IntegrationsComponent,
 		ComplianceComponent,
-		InspectorComponent
+		InspectorComponent,
+		TourFooterComponent
 	],
 	selector: 'admin-page',
 	standalone: true,
@@ -35,13 +37,13 @@ type AdminPageProps = {
 				<a class="ao-brand" href="/"><span class="ao-brand-mark"></span><span>AbsoluteOps</span></a>
 				<div class="ao-nav">
 					@for (item of nav; track item.routeKey) {
-						<a [attr.href]="item.href" [attr.aria-current]="item.routeKey === 'admin' ? 'page' : null">{{ item.label }}</a>
+						<a [attr.href]="item.href" [attr.data-framework]="item.framework" [attr.aria-current]="item.routeKey === 'admin' ? 'page' : null"><span class="ao-nav__chip" aria-hidden="true"></span>{{ item.label }}</a>
 					}
 				</div>
 			</nav>
 
 			<header class="ao-admin__head">
-				<span class="ao-pill">Angular · SSR + hydrate</span>
+				<span class="ao-fw-pill" data-framework="angular"><span class="ao-fw-pill__dot" aria-hidden="true"></span>Angular · SSR + hydrate</span>
 				<h1>Enterprise Admin</h1>
 				<p style="color:var(--fg-muted)">Roles, workflows, audit, integrations, and compliance — the back-office surface where Owners and Analysts spend their day.</p>
 			</header>
@@ -58,6 +60,7 @@ type AdminPageProps = {
 					}
 				</div>
 			</div>
+			<ao-tour-footer routeKey="admin"></ao-tour-footer>
 		</div>
 		<ao-inspector routeKey="admin"></ao-inspector>
 	`

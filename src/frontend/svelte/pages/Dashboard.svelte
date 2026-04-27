@@ -8,6 +8,7 @@
 	import AlertList from '../components/AlertList.svelte';
 	import Inspector from '../components/Inspector.svelte';
 	import KPICard from '../components/KPICard.svelte';
+	import TourFooter from '../components/TourFooter.svelte';
 	import TrendChart from '../components/TrendChart.svelte';
 
 	type Alert = {
@@ -108,13 +109,13 @@
 		<a class="ao-brand" href="/"><span class="ao-brand-mark"></span><span>AbsoluteOps</span></a>
 		<div class="ao-nav">
 			{#each PRIMARY_NAV as item (item.routeKey)}
-				<a href={item.href} aria-current={item.routeKey === 'dashboard' ? 'page' : undefined}>{item.label}</a>
+				<a href={item.href} data-framework={item.framework} aria-current={item.routeKey === 'dashboard' ? 'page' : undefined}><span class="ao-nav__chip" aria-hidden="true"></span>{item.label}</a>
 			{/each}
 		</div>
 	</nav>
 
 	<header class="ao-dash__head">
-		<span class="ao-pill">Svelte · SSR + hydrate</span>
+		<span class="ao-fw-pill" data-framework="svelte"><span class="ao-fw-pill__dot" aria-hidden="true"></span>Svelte · SSR + hydrate</span>
 		<h1>Executive Dashboard</h1>
 		<p style="color:var(--fg-muted)">Live operational pulse and KPI rotations. Values rotate every 5 seconds; the chart strip below picks up the latest seven snapshots.</p>
 	</header>
@@ -163,6 +164,7 @@
 			<TrendChart label={item.label} points={item.points} valueText={`${item.points[item.points.length - 1] ?? 0}${item.unit}`} />
 		{/each}
 	</section>
+	<TourFooter routeKey="dashboard" />
 </div>
 
 <Inspector routeKey="dashboard" />

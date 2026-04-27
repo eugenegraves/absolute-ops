@@ -16,13 +16,14 @@
 			<span>AbsoluteOps</span>
 		</a>
 		<div class="ao-nav">
-			<a href="/" aria-current="page">Home</a>
-			<a href="/track">Track</a>
-			<a href="/workspace">Workspace</a>
-			<a href="/dashboard">Dashboard</a>
-			<a href="/admin">Admin</a>
-			<a href="/field">Field</a>
-			<a href="/ai-briefing">AI Briefing</a>
+			<a href="/" data-framework="html" aria-current="page"><span class="ao-nav__chip" aria-hidden="true"></span>Home</a>
+			<a href="/track" data-framework="htmx"><span class="ao-nav__chip" aria-hidden="true"></span>Track</a>
+			<a href="/workspace" data-framework="react"><span class="ao-nav__chip" aria-hidden="true"></span>Workspace</a>
+			<a href="/dashboard" data-framework="svelte"><span class="ao-nav__chip" aria-hidden="true"></span>Dashboard</a>
+			<a href="/admin" data-framework="angular"><span class="ao-nav__chip" aria-hidden="true"></span>Admin</a>
+			<a href="/field" data-framework="islands"><span class="ao-nav__chip" aria-hidden="true"></span>Field</a>
+			<a href="/ai-briefing" data-framework="vue"><span class="ao-nav__chip" aria-hidden="true"></span>AI Briefing</a>
+			<a href="/architecture" data-framework="html"><span class="ao-nav__chip" aria-hidden="true"></span>Architecture</a>
 		</div>
 		<a class="ao-cta" href="/workspace">Open Workspace</a>
 	</nav>
@@ -47,6 +48,25 @@
 		<div class="ao-proof__cell"><div class="ao-proof__title">Per-route framework</div><div class="ao-proof__detail">React, Svelte, Vue, Angular, HTMX</div></div>
 		<div class="ao-proof__cell"><div class="ao-proof__title">Minimal JS</div><div class="ao-proof__detail">Static + islands where possible</div></div>
 		<div class="ao-proof__cell"><div class="ao-proof__title">AI-ready</div><div class="ao-proof__detail">Streamed briefings via aiChat plugin</div></div>
+	</section>
+
+	<section class="ao-demo-bar">
+		<div class="ao-demo-bar__head">
+			<span class="ao-pill">Start here</span>
+			<h2>Take the 5-minute tour</h2>
+			<p>Eight surfaces, seven frameworks, one server. Every page has a Framework Inspector pill in the bottom-right — click it, or press <kbd class="ao-kbd">\</kbd>, to see which framework rendered the page and why.</p>
+		</div>
+		<div class="ao-demo-bar__actions">
+			<a class="ao-cta" href="/industries/logistics">Take the 5-minute tour →</a>
+			<a class="ao-cta ao-cta--ghost" href="/architecture">See the architecture</a>
+		</div>
+		<div class="ao-demo-bar__try">
+			<span class="ao-demo-bar__try-label">Or jump straight into the HTMX tracker:</span>
+			<a class="ao-demo-bar__try-chip" href="/track/OP-2048">OP-2048</a>
+			<a class="ao-demo-bar__try-chip" href="/track/MED-3911">MED-3911</a>
+			<a class="ao-demo-bar__try-chip" href="/track/FIELD-8820">FIELD-8820</a>
+			<a class="ao-demo-bar__try-chip" href="/track/TRANSIT-77">TRANSIT-77</a>
+		</div>
 	</section>
 
 	<section class="ao-section">

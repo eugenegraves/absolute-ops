@@ -4,6 +4,7 @@ import { useAIStream } from '@absolutejs/absolute/vue/ai';
 import { PRIMARY_NAV } from '../../../shared/nav';
 import Inspector from '../components/Inspector.vue';
 import ToolCard from '../components/ToolCard.vue';
+import TourFooter from '../components/TourFooter.vue';
 
 defineProps<{
 	cssPath: string;
@@ -73,13 +74,14 @@ const renderContent = (content: string | undefined | null) => content ?? '';
 					v-for="item in PRIMARY_NAV"
 					:key="item.routeKey"
 					:href="item.href"
+					:data-framework="item.framework"
 					:aria-current="item.routeKey === 'aiBriefing' ? 'page' : null"
-				>{{ item.label }}</a>
+				><span class="ao-nav__chip" aria-hidden="true"></span>{{ item.label }}</a>
 			</div>
 		</nav>
 
 		<header class="ao-ai__head">
-			<span class="ao-pill">Vue · WebSocket · aiChat plugin · mock provider</span>
+			<span class="ao-fw-pill" data-framework="vue"><span class="ao-fw-pill__dot" aria-hidden="true"></span>Vue · WebSocket · aiChat plugin · mock provider</span>
 			<h1>AI Operations Briefing</h1>
 			<p style="color:var(--fg-muted)">
 				Connected to the AbsoluteJS aiChat plugin via WebSocket. The provider behind it is a local mock — swap it for Anthropic, OpenAI, Gemini, or Ollama by changing one line in the server.
@@ -149,6 +151,7 @@ const renderContent = (content: string | undefined | null) => content ?? '';
 				</div>
 			</aside>
 		</div>
+		<TourFooter route-key="aiBriefing" />
 	</div>
 	<Inspector route-key="aiBriefing" />
 </template>

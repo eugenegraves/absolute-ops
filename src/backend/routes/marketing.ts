@@ -11,6 +11,7 @@ import type { Industry, IndustrySlug, RouteKey } from '../../shared/types';
 import { renderInspectorMarkup } from '../inspector/renderInspectorMarkup';
 import { injectInspectorIntoHTML } from '../utils/pageEnvelope';
 import { renderTopNav } from '../utils/renderTopNav';
+import { renderTourFooter } from '../utils/renderTourFooter';
 
 const escape = (s: string) =>
 	s
@@ -25,6 +26,7 @@ const renderIndustryPage = (
 	routeKey: RouteKey
 ): string => {
 	const inspector = renderInspectorMarkup(routeKey);
+	const tour = renderTourFooter(routeKey);
 	const bullets = industry.bullets
 		.map(
 			(b) =>
@@ -83,6 +85,7 @@ ${renderTopNav(routeKey)}
 <div class="ao-grid ao-grid--3">${otherIndustries}</div>
 </section>
 <footer class="ao-mkt-foot"><span>AbsoluteOps · ${escape(industry.label)}</span><span><a class="ao-mkt-foot__link" href="/architecture">Architecture</a> · Pre-rendered · ISR 1h</span></footer>
+${tour}
 </div>
 ${inspector}
 </body>

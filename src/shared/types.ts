@@ -98,6 +98,15 @@ export type RouteKey =
 	| 'field'
 	| 'aiBriefing';
 
+export type FrameworkKey =
+	| 'html'
+	| 'htmx'
+	| 'react'
+	| 'svelte'
+	| 'vue'
+	| 'angular'
+	| 'islands';
+
 export type InspectorMetadata = {
 	route: string;
 	surface: string;
@@ -106,4 +115,6 @@ export type InspectorMetadata = {
 	server: string;
 	state: string;
 	payload: string;
+	framework: FrameworkKey;
+	rationale: string;
 };

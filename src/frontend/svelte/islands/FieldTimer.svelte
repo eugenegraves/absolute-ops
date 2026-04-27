@@ -3,7 +3,7 @@
 
 	let elapsed = 0;
 	let running = false;
-	let intervalId: ReturnType<typeof setInterval> | null = null;
+	let intervalId: Timer | null = null;
 
 	function start() {
 		if (running) {

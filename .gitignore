@@ -45,8 +45,8 @@ package-lock.json
 /build
 /drizzle
 
-# index files
-**/indexes/*
+# generated index files (source indexes are tracked)
+**/generated/**/indexes/*
 
 # dist folder
 /dist
